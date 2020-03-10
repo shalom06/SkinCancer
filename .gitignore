@@ -1,0 +1,7 @@
+# Project exclude paths
+/venv/
+!/final.h5
+controller/__pycache__/
+models/__pycache__/
+models/classifier/__pycache__/
+final.h5

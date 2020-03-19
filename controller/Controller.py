@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
-from models.utils.BlurDetector import ImageQualityChecker
 from models.ResponseModel import Response
 from models.classifier.Classifier import Classifier
+from models.utils.BlurDetector import ImageQualityChecker
 
 
 class Controller(ABC):

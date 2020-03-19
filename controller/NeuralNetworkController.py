@@ -5,9 +5,9 @@ import numpy as np
 from PIL import Image
 
 from controller.Controller import Controller
-from models.ResponseModel import Response
 from models.classifier.Classifier import Classifier
 from models.factory.ClassifierFactory import ClassifierFactory
+from views.ResponseModel import Response
 
 
 class NeuralNetworkController(Controller):

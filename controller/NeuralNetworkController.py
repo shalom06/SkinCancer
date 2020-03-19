@@ -7,7 +7,7 @@ from PIL import Image
 from controller.Controller import Controller
 from models.ResponseModel import Response
 from models.classifier.Classifier import Classifier
-from models.classifier.NeuralNetwork import NeuralNetwork
+from models.factory.ClassifierFactory import ClassifierFactory
 
 
 class NeuralNetworkController(Controller):
@@ -25,4 +25,4 @@ class NeuralNetworkController(Controller):
         return Response(userId, predictionType, percentage, isBlurry)
 
     def getClassifier(self) -> Classifier:
-        return NeuralNetwork()
+        return ClassifierFactory.getClassifier("NEURAL_NETWORK")

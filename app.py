@@ -14,7 +14,6 @@ app = Flask(__name__)  # create an app instance
 def getPrediction():
     imageUrl = request.args.get('image-url') + "&token=" + request.args.get('token')
     userId = request.args.get('user-id')
-
     image = nn.convertImageToArray(imageUrl)
     prediction = nn.getPrediction(image, userId,
                                   imageUrl)

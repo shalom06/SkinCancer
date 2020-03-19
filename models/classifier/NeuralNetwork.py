@@ -30,7 +30,7 @@ class NeuralNetwork(Classifier):
         return '{0:.2f}'.format(((result - 0.5) / (0.0 - 0.5)) * 100)
 
     @staticmethod
-    def convertToPercentage(result):
+    def convertToPercentageMalignant(result):
         return '{0:.2f}'.format(((result - 0.5) / (1.0 - 0.5)) * 100)
 
     @staticmethod
@@ -40,7 +40,7 @@ class NeuralNetwork(Classifier):
         elif predictionType == PredictionClass.BENIGN:
             return NeuralNetwork.convertToPercentageBenign(result)
         elif predictionType == PredictionClass.MALIGNANT:
-            return NeuralNetwork.convertToPercentage(result)
+            return NeuralNetwork.convertToPercentageMalignant(result)
 
     @staticmethod
     def getType(result) -> PredictionClass:

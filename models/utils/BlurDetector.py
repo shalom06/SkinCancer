@@ -2,11 +2,12 @@ import cv2
 from skimage import io
 
 
-class BlurChecker:
+class ImageQualityChecker:
 
     @staticmethod
-    def variance_of_laplacian(image):
+    def checkIfImageAcceptable(image):
         threshold = 50
         imageDecoded = io.imread(image)
+        shape = imageDecoded.shape
         score = cv2.Laplacian(imageDecoded, cv2.CV_64F).var()
-        return False if score > threshold else True
+        return True if score > threshold and shape[0] > 300 and shape[1] > 300 else False

@@ -21,8 +21,8 @@ class NeuralNetworkController(Controller):
 
     def getPrediction(self, image, userId, imageUrl) -> Response:
         predictionType, percentage = self.classifier.predict(image)
-        isBlurry = self.checkBlurLevel(imageUrl)
-        return Response(userId, predictionType, percentage, isBlurry)
+        isAcceptable = self.checkIfValid(imageUrl)
+        return Response(userId, predictionType, percentage, isAcceptable)
 
     def getClassifier(self) -> Classifier:
-        return ClassifierFactory.getClassifier("NEURAL_NETWORK")
+        return ClassifierFactory.createClassifier("NEURAL_NETWORK")

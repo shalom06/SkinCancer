@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from models.utils.BlurDetector import BlurChecker
+from models.utils.BlurDetector import ImageQualityChecker
 from models.ResponseModel import Response
 from models.classifier.Classifier import Classifier
 
@@ -22,5 +22,5 @@ class Controller(ABC):
         pass
 
     @staticmethod
-    def checkBlurLevel(imageUrl):
-        return BlurChecker.variance_of_laplacian(imageUrl)
+    def checkIfValid(imageUrl):
+        return ImageQualityChecker.checkIfImageAcceptable(imageUrl)

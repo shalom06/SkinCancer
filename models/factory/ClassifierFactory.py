@@ -4,6 +4,6 @@ from models.classifier.NeuralNetwork import NeuralNetwork
 
 class ClassifierFactory:
     @staticmethod
-    def getClassifier(classifierType) -> Classifier:
+    def createClassifier(classifierType) -> Classifier:
         if classifierType == "NEURAL_NETWORK":
             return NeuralNetwork()

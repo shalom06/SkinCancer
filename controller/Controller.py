@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from models.BlurDetector import BlurChecker
+from models.utils.BlurDetector import BlurChecker
 from models.ResponseModel import Response
 from models.classifier.Classifier import Classifier
 

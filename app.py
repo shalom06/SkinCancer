@@ -8,7 +8,6 @@ from gevent.pywsgi import WSGIServer
 from controller.NeuralNetworkController import NeuralNetworkController
 
 app = Flask(__name__)  # create an app instance
-app.debug = True
 
 
 @app.route("/skin-cancer/get-prediction", methods=['GET', 'OPTIONS'])  # at the end point /
